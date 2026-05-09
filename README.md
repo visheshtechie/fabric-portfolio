@@ -1,6 +1,6 @@
 # Microsoft Fabric Portfolio
 
-End-to-end data engineering portfolio built on Microsoft Fabric, covering Fabric Dojo's full curriculum and DP-700 certification preparation.
+End-to-end data engineering portfolio built on Microsoft Fabric, highlighting DP-700 certification preparation.
 
 ## Modules
 
