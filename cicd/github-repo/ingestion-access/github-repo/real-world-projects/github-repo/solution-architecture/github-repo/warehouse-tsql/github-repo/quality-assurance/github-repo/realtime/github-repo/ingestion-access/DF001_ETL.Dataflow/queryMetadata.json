@@ -1,0 +1,39 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "DF001_ETL",
+  "queryGroups": [],
+  "documentLocale": "en-GB",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "406af774-8b29-4e5f-9b44-50d791fd541c",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "Silver_Addresses": {
+      "queryId": "c4e16854-a780-4183-9522-7a1356fb2fed",
+      "queryName": "Silver_Addresses"
+    },
+    "Silver_Addresses_DataDestination": {
+      "queryId": "86dd4a4a-d534-4f05-b76e-fcd1d997dced",
+      "queryName": "Silver_Addresses_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Warehouse",
+      "kind": "Warehouse",
+      "connectionId": "{\"ClusterId\":\"76933307-29fa-48b4-9ef8-a612aaab56a0\",\"DatasourceId\":\"83d7cb68-a288-4ea3-8e70-88c70d8f8c70\"}"
+    },
+    {
+      "path": "https://raw.githubusercontent.com/LearnMicrosoftFabric/dojo/main/datasets/contacts.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"76933307-29fa-48b4-9ef8-a612aaab56a0\",\"DatasourceId\":\"7641c174-b5ce-4e28-9ea4-22cf953bf735\"}"
+    }
+  ]
+}
