@@ -19,6 +19,10 @@
 # META           "id": "32a5b01d-d56f-4400-95ac-37198d7ef67c"
 # META         }
 # META       ]
+# META     },
+# META     "environment": {
+# META       "environmentId": "b65f3501-e64a-944e-4bf8-bc3f0e5a33ff",
+# META       "workspaceId": "00000000-0000-0000-0000-000000000000"
 # META     }
 # META   }
 # META }
