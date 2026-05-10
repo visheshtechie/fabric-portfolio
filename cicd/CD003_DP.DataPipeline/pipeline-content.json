@@ -33,9 +33,17 @@
         }
       }
     ],
+    "concurrency": 2,
+    "parameters": {
+      "filename": {
+        "type": "string",
+        "defaultValue": "abcd1234"
+      }
+    },
     "variables": {
       "PipelineRunTime": {
-        "type": "String"
+        "type": "String",
+        "defaultValue": "bark"
       }
     }
   }
