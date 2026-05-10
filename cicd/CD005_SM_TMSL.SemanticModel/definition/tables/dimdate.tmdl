@@ -1,0 +1,80 @@
+table dimdate
+	lineageTag: c518ec1d-cc54-41e1-9fd8-b1b4d537b2e8
+	sourceLineageTag: [dbo].[dimdate]
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d7e2b5b-f256-429e-83ae-b246ef466c2b
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c01f27af-6162-4af7-bab8-8194debd98e0
+		sourceLineageTag: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f999a5e-7734-4432-9cfb-b90768e0a919
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: e27bcc52-5f11-4499-9209-94c7de6afafc
+		sourceLineageTag: Quarter
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 66dc3588-0416-47a0-9f42-b99e98f0c4f3
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: be4d1ccd-e2a0-4a09-8204-3812b80ac66c
+		sourceLineageTag: Day
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: d56bb631-496a-41c3-b902-227392737c50
+		sourceLineageTag: DayOfWeek
+		summarizeBy: none
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimdate = entity
+		mode: directLake
+		source
+			entityName: dimdate
+			expressionSource: 'DirectLake - CD005_Lakehouse'
+

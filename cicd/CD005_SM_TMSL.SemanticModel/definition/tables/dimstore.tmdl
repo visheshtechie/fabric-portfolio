@@ -1,0 +1,65 @@
+table dimstore
+	lineageTag: b9ba5e04-fc19-40e3-9bf9-70fe0e7dbeda
+	sourceLineageTag: [dbo].[dimstore]
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c120be2-e217-420b-bfb4-add2a03f891a
+		sourceLineageTag: StoreKey
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreName
+		dataType: string
+		lineageTag: 169fe2ce-0857-424d-8fe0-15b01456592e
+		sourceLineageTag: StoreName
+		summarizeBy: none
+		sourceColumn: StoreName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreType
+		dataType: string
+		lineageTag: 2da74183-d9dc-4877-b73f-43a76508f8e1
+		sourceLineageTag: StoreType
+		summarizeBy: none
+		sourceColumn: StoreType
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreCity
+		dataType: string
+		lineageTag: 82cb4805-fc16-44b3-801e-8ad20375f2f7
+		sourceLineageTag: StoreCity
+		summarizeBy: none
+		sourceColumn: StoreCity
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreState
+		dataType: string
+		lineageTag: 38dd7f2d-ebeb-4a99-a07d-d7ec8cd67454
+		sourceLineageTag: StoreState
+		summarizeBy: none
+		sourceColumn: StoreState
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreCountry
+		dataType: string
+		lineageTag: cfafe357-5103-46ed-85c9-c60961ebdf9f
+		sourceLineageTag: StoreCountry
+		summarizeBy: none
+		sourceColumn: StoreCountry
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimstore = entity
+		mode: directLake
+		source
+			entityName: dimstore
+			expressionSource: 'DirectLake - CD005_Lakehouse'
+

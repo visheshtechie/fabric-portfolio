@@ -1,0 +1,16 @@
+relationship 83151f85-f382-8e8f-28ff-8d50b40ac84e
+	fromColumn: factsales.StoreKey
+	toColumn: dimstore.StoreKey
+
+relationship b228d167-e4ee-dd59-5541-afaeec6bad6d
+	fromColumn: factsales.ProductKey
+	toColumn: dimproduct.ProductKey
+
+relationship ce83584c-3115-1d8e-7f05-ed8bd25476a1
+	fromColumn: factsales.DateKey
+	toColumn: dimdate.DateKey
+
+relationship ab2eee5f-2bec-0f20-4888-7ea156eb2cc3
+	fromColumn: factsales.CustomerKey
+	toColumn: dimcustomer.CustomerKey
+

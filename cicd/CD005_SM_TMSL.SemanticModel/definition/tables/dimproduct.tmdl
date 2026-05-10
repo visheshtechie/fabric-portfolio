@@ -1,0 +1,56 @@
+table dimproduct
+	lineageTag: fb29503f-eecd-4e97-8c37-b2e0ab7d33b2
+	sourceLineageTag: [dbo].[dimproduct]
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: e19f3527-a635-486f-b7c6-04f48d533153
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 3dc0e99e-60e3-4089-9c3a-ff1ccdb8daa8
+		sourceLineageTag: ProductName
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategory
+		dataType: string
+		lineageTag: 02bde7b0-4928-45c5-adcd-bf96755f6c7c
+		sourceLineageTag: ProductCategory
+		summarizeBy: none
+		sourceColumn: ProductCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategory
+		dataType: string
+		lineageTag: 84b890e4-1a50-492e-9f4b-319555cbd704
+		sourceLineageTag: ProductSubcategory
+		summarizeBy: none
+		sourceColumn: ProductSubcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 63412158-a43e-4777-96ef-fa99708e7d19
+		sourceLineageTag: Manufacturer
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimproduct = entity
+		mode: directLake
+		source
+			entityName: dimproduct
+			expressionSource: 'DirectLake - CD005_Lakehouse'
+

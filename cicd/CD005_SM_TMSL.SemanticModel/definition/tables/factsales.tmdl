@@ -1,0 +1,81 @@
+table factsales
+	lineageTag: 7a383836-f32f-4d0f-bf9a-57035841f412
+	sourceLineageTag: [dbo].[factsales]
+
+	column SalesKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b581ad5b-a78a-4c32-8695-0771eea70aa0
+		sourceLineageTag: SalesKey
+		summarizeBy: count
+		sourceColumn: SalesKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 658855dd-b585-4d16-b79e-323e93e7622f
+		sourceLineageTag: DateKey
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ebd7aba-c865-4012-9d3c-ae556182f0be
+		sourceLineageTag: ProductKey
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: e5bcb12d-49ce-455c-b008-50b1c35f8be3
+		sourceLineageTag: CustomerKey
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ce2d2cdd-ed7e-45f0-b092-24ea732249c9
+		sourceLineageTag: StoreKey
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmount
+		dataType: double
+		lineageTag: 5c899ec3-d78c-454e-a4e8-d70b273e9613
+		sourceLineageTag: SalesAmount
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QuantitySold
+		dataType: int64
+		formatString: 0
+		lineageTag: 8022c0d8-abd3-40e3-a077-8f4c93553523
+		sourceLineageTag: QuantitySold
+		summarizeBy: sum
+		sourceColumn: QuantitySold
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factsales = entity
+		mode: directLake
+		source
+			entityName: factsales
+			expressionSource: 'DirectLake - CD005_Lakehouse'
+
