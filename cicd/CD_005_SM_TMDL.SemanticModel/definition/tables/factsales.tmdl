@@ -1,0 +1,82 @@
+table factsales
+	lineageTag: a86b701b-155e-4d1b-a30f-fb55a2383acb
+
+	measure TotalSales = SUM(factsales[QuantitySold])
+		formatString: 0
+		lineageTag: c656c707-5ee3-4b40-8913-1506c49576d8
+
+	column SalesKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a20ee3d-151b-4032-b614-36f4b42106db
+		summarizeBy: count
+		sourceColumn: SalesKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 768fb196-93c3-4763-b928-81379b7d1728
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3aa16bbe-71e9-49ec-94c2-e2cd093aa886
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9c02134e-75c8-4c1c-8f9c-22b7a3677d94
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b0e8af3-84b6-4888-aa81-9cccf54cc23f
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmount
+		dataType: double
+		lineageTag: e4025e06-30a6-4d23-bf2e-626f28d89a69
+		summarizeBy: sum
+		sourceColumn: SalesAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column QuantitySold
+		dataType: int64
+		formatString: 0
+		lineageTag: badc0fac-7cd5-40b0-8963-116e07fa159c
+		summarizeBy: sum
+		sourceColumn: QuantitySold
+
+		annotation SummarizationSetBy = Automatic
+
+	partition factsales = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("yxbmxcxnzddufaljxjbyudn6f4-afcmvf47pp7e7ppfoauixrsig4.datawarehouse.fabric.microsoft.com", "CD005_Lakehouse"),
+				    dbo_factsales = Source{[Schema="dbo",Item="factsales"]}[Data]
+				in
+				    dbo_factsales
+
+	annotation PBI_ResultType = Table
+

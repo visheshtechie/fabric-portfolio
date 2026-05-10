@@ -1,0 +1,84 @@
+table dimdate
+	lineageTag: 01cdde4c-5bb1-4385-b930-3b8c23d9b02e
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 02212d67-2a6f-4305-91f2-584e94f830e2
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: a7eec412-7c19-452e-ab54-911a41dcb049
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: ec056d07-99b1-4ee0-8eae-1adaccf792bf
+			defaultHierarchy: LocalDateTable_c6c71b96-ce87-4387-9599-a677fbfd2f70.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 79e5344a-eecf-4e0f-93a9-70310cbb9458
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: f435741a-a471-4ba1-9e51-252a634c7397
+		summarizeBy: sum
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: 7403ce81-d819-42ab-b368-a4279516e56f
+		summarizeBy: sum
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 009d3536-6342-4460-b6e2-1a3dab5a8ccd
+		summarizeBy: sum
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeek
+		dataType: int64
+		formatString: 0
+		lineageTag: 923caa83-348b-4594-b415-f77b8d8af5d3
+		summarizeBy: sum
+		sourceColumn: DayOfWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dimdate = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("yxbmxcxnzddufaljxjbyudn6f4-afcmvf47pp7e7ppfoauixrsig4.datawarehouse.fabric.microsoft.com", "CD005_Lakehouse"),
+				    dbo_dimdate = Source{[Schema="dbo",Item="dimdate"]}[Data]
+				in
+				    dbo_dimdate
+
+	annotation PBI_ResultType = Table
+
